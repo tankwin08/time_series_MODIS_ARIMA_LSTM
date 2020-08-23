@@ -23,17 +23,16 @@ ARIMA can explain the time series pattern for given frequency or lag (hour, day 
 
 ARIMA analysis will focus on the logic of model and how to select the three important terms of the model: **p** is the order of the AR term,
 
-**q** is the order of the MA term, **d** is the number of differencing required to make the time series stationary. You can go to [here]（https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/） for 
+**q** is the order of the MA term, **d** is the number of differencing required to make the time series stationary. You can go to [here](https://www.machinelearningplus.com/time-series/arima-model-time-series-forecasting-python/） for 
 detailed explaination of ARIMA.
 
-The first step of the model is to make the time series data stationary. Why stationary?
+The first step of the model is to make the time series data stationary. 
 
-Because, term ‘Auto Regressive’ in ARIMA means it is a linear regression model that uses its own lags as predictors. 
-Linear regression models, as you know, work best when the predictors are not correlated and are independent of each other.
+
 
 ***Stationarity***
 
-*** what is [stationary?](https://www.kaggle.com/sumi25/understand-arima-and-tune-p-d-q)***
+***what is [stationary?](https://www.kaggle.com/sumi25/understand-arima-and-tune-p-d-q)***
 
 **1** The mean of the series should not be a function of time. 
 
@@ -42,6 +41,8 @@ Linear regression models, as you know, work best when the predictors are not cor
 **3** the covariance of the i th term and the (i + m) th term should not be a function of time
 
 ***why the data need to be stationary?***
+
+Because, term ‘Auto Regressive’ in ARIMA means it is a linear regression model that uses its own lags as predictors. 
 
 When running a linear regression the assumption is that all of the observations are all independent of each other.
 In a time series, however, we know that observations are time dependent. 
@@ -92,7 +93,7 @@ And ‘q’ is the order of the ‘Moving Average’ (MA) term. It refers to the
 * Identification of an MA model is often best done with the ACF rather than the PACF.
     * For an MA model, the theoretical PACF does not shut off, but instead tapers toward 0 in some manner.  A clearer pattern for an MA model is in the ACF.  The ACF will have non-zero autocorrelations only at lags involved in the model.
     
-    **how to determine q**: to see first negative values of ACF plot's corresponding x value
+    **how to determine q**: to see first negative values of ACF plot's corresponding x-axis (lag) value
     
 ***Note:***  The sole reliance on the ACF and PACF to determine the p and q is **NOT** always correct. These plots just can help you understnad the ARIMA model and justify whether you can get a better model or worse one. 
 Just try the simple model first and find a better model using AIC through multiple time exploration.
@@ -100,7 +101,7 @@ Just try the simple model first and find a better model using AIC through multip
 
 ### (2) LSTM
 
-LSTM is special kind of RNN. There are multiple sources to understand the LSTM. Here is one good [explination](http://colah.github.io/posts/2015-08-Understanding-LSTMs/). Basically, three used three gates (forget gate, input gate and output gate)to update the cell states. As the link provide a more comprehensive explination, I will not give redudant infomration on LSTM here.
+LSTM is special kind of RNN. There are multiple sources to understand the LSTM. Here is one good [explination](http://colah.github.io/posts/2015-08-Understanding-LSTMs/). Basically, it used three gates (forget gate, input gate and output gate)to update the cell states. As the link provide a more comprehensive explination, I will not give redudant infomration on LSTM here.
 
  Long Short Term Neural Network (LSTM) are a type of recurrent unit that is often used with deep neural networks. For TensorFlow, LSTM can be thought of as a layer type that can be combined with other layer types, such as dense.  
 
